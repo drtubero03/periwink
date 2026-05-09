@@ -46,63 +46,86 @@ function BotanicalSprig({ size = 64 }: { size?: number }) {
   );
 }
 
-const BUTTERFLY_CONFIG = [
-  { left: "8%",  delay: 0.0, size: 20, driftX: 18,  duration: 3.8 },
-  { left: "22%", delay: 0.5, size: 16, driftX: -14, duration: 4.2 },
-  { left: "36%", delay: 0.2, size: 24, driftX: 10,  duration: 3.5 },
-  { left: "50%", delay: 0.7, size: 18, driftX: -20, duration: 4.0 },
-  { left: "63%", delay: 0.3, size: 22, driftX: 16,  duration: 3.7 },
-  { left: "76%", delay: 0.9, size: 15, driftX: -12, duration: 4.4 },
-  { left: "88%", delay: 0.1, size: 19, driftX: 8,   duration: 3.9 },
-  { left: "44%", delay: 1.1, size: 17, driftX: -18, duration: 4.1 },
-];
+function ButterflyVideoOverlay({ active, onDismiss }: { active: boolean; onDismiss: () => void }) {
+  const [showText, setShowText] = useState(false);
 
-function ButterflyOverlay({ active }: { active: boolean }) {
+  useEffect(() => {
+    if (!active) return;
+    const t = setTimeout(() => setShowText(true), 600);
+    const auto = setTimeout(onDismiss, 7000);
+    return () => { clearTimeout(t); clearTimeout(auto); };
+  }, [active, onDismiss]);
+
   if (!active) return null;
+
   return (
     <>
       <style>{`
-        @keyframes bf-rise {
-          0%   { transform: translateY(0) translateX(0);      opacity: 0; }
-          8%   { opacity: 0.85; }
-          50%  { opacity: 0.6; }
-          85%  { opacity: 0.15; }
-          100% { transform: translateY(-90vh) translateX(var(--drift)); opacity: 0; }
-        }
+        @keyframes bv-fadein { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes bv-textrise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
       `}</style>
-      <div style={{ position: "fixed", inset: 0, pointerEvents: "none", zIndex: 100, overflow: "hidden" }}>
-        {BUTTERFLY_CONFIG.map((b, i) => (
-          <div
-            key={i}
-            style={{
-              position: "absolute",
-              bottom: "-40px",
-              left: b.left,
-              fontSize: b.size,
-              lineHeight: 1,
-              "--drift": `${b.driftX}px`,
-              animation: `bf-rise ${b.duration}s ease-out ${b.delay}s 1 forwards`,
-            } as React.CSSProperties}
-          >
-            🦋
-          </div>
-        ))}
+      <div
+        onClick={onDismiss}
+        style={{
+          position: "fixed", inset: 0, zIndex: 200,
+          background: "#000",
+          cursor: "pointer",
+          animation: "bv-fadein 0.5s ease forwards",
+        }}
+      >
+        <video
+          autoPlay muted playsInline
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+        >
+          <source src="/butterfly-thankyou.mp4" type="video/mp4" />
+        </video>
+        <div style={{
+          position: "absolute", inset: 0,
+          display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+          zIndex: 1,
+        }}>
+          {showText && (
+            <>
+              <h2 style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(28px, 5vw, 52px)", fontWeight: 300,
+                color: "#fff", textAlign: "center",
+                textShadow: "0 2px 20px rgba(0,0,0,0.4)",
+                marginBottom: 12,
+                animation: "bv-textrise 1s ease forwards",
+              }}>
+                Welcome to Periwink
+              </h2>
+              <p style={{
+                fontSize: "clamp(16px, 2.5vw, 22px)",
+                color: "rgba(255,255,255,0.9)",
+                textAlign: "center",
+                textShadow: "0 1px 10px rgba(0,0,0,0.3)",
+                animation: "bv-textrise 1s ease 0.3s both",
+              }}>
+                You are exactly where you need to be.
+              </p>
+              <p style={{
+                fontSize: 12, color: "rgba(255,255,255,0.4)",
+                marginTop: 40,
+                animation: "bv-textrise 1s ease 1s both",
+              }}>
+                tap anywhere to continue
+              </p>
+            </>
+          )}
+        </div>
       </div>
     </>
   );
 }
 
 function VerificationScreen({ email }: { email: string }) {
-  const [showButterflies, setShowButterflies] = useState(true);
-
-  useEffect(() => {
-    const t = setTimeout(() => setShowButterflies(false), 6000);
-    return () => clearTimeout(t);
-  }, []);
+  const [showOverlay, setShowOverlay] = useState(true);
 
   return (
     <>
-      <ButterflyOverlay active={showButterflies} />
+      <ButterflyVideoOverlay active={showOverlay} onDismiss={() => setShowOverlay(false)} />
       <div style={{
         background: "var(--color-card, #FDFBF8)",
         border: "1px solid var(--color-border-warm, #DDD7CE)",
