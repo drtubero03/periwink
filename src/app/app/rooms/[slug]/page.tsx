@@ -85,7 +85,7 @@ export default async function RoomDetailPage({
               fontFamily: "var(--font-body)", fontWeight: 400,
             }}
           >
-            Follow
+            Join to Follow
           </LockedButton>
         </div>
       </section>
@@ -99,7 +99,7 @@ export default async function RoomDetailPage({
           <p style={{ fontFamily: "var(--font-heading)", fontSize: 20, marginBottom: 8 }}>
             This conversation is just beginning.
           </p>
-          <p>Be among the first to share when we open.</p>
+          <p>Join Periwink to be among the first to share here.</p>
         </div>
       ) : isGuest ? (
         <>

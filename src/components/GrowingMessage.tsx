@@ -1,43 +1,48 @@
 "use client";
 
 import { useState, useEffect, type ReactNode } from "react";
+import Link from "next/link";
 
 const messages: Record<string, { heading: string; body: string }> = {
   "share a post": {
     heading: "Your voice matters here",
-    body: "We're building the posting experience with the same care we want you to feel. Soon you'll be able to share your story.",
+    body: "Read and explore the conversations freely. Create an account to contribute, connect, and participate in the community.",
   },
   react: {
-    heading: "Support is coming",
-    body: "Soon you'll be able to show support with hearts, hugs, and 'me too' reactions. Every gesture of recognition matters.",
+    heading: "Your support matters",
+    body: "Join Periwink to show support with reactions — hearts, hugs, and 'me too' moments that let others know they're not alone.",
   },
   "sign in": {
-    heading: "Accounts are coming soon",
-    body: "For now, explore what this space will feel like. When we open, your place will be here.",
+    heading: "Welcome back",
+    body: "Sign in to participate in the conversations, share your experiences, and connect with the community.",
   },
   join: {
-    heading: "We're almost ready for you",
-    body: "Account creation is coming soon. For now, take a look around and feel what this community will be.",
+    heading: "Join the community",
+    body: "Explore the conversations freely. Create an account to contribute, connect, and participate.",
   },
   "follow this room": {
-    heading: "Room following is on its way",
-    body: "This room will be waiting for you. Soon you'll be able to follow the conversations that matter most.",
+    heading: "Follow this conversation",
+    body: "Join Periwink to follow the rooms that matter most and stay connected to the conversations you care about.",
+  },
+  "follow this conversation": {
+    heading: "Follow this conversation",
+    body: "Join Periwink to follow the rooms that matter most and stay connected to the conversations you care about.",
   },
   "edit your profile": {
-    heading: "Your profile is being crafted",
-    body: "Soon you'll choose a pseudonym, write your bio, and make this space your own — on your terms.",
+    heading: "Your profile is yours",
+    body: "Join Periwink to choose a pseudonym, write your bio, and make this space your own — on your terms.",
   },
   "save your check-in": {
-    heading: "Tracking is almost here",
-    body: "We're building a check-in experience that honors what you're feeling — not just what you're measuring. It's coming soon.",
+    heading: "Track what matters to you",
+    body: "Join Periwink to log your symptoms, track patterns over time, and contribute to community insights.",
   },
   "share your thoughts": {
-    heading: "Conversation is coming",
-    body: "Soon you'll be able to reply, share, and connect with women who understand. For now, know that you're already part of this.",
+    heading: "Your voice matters here",
+    body: "Explore the conversations freely. Join Periwink to share your experiences, reflections, and insights with the community.",
   },
   default: {
-    heading: "Periwink is still growing",
-    body: "This feature is being built with care. Every part of this space is designed to help you feel seen, supported, and less alone.",
+    heading: "Join the community",
+    body: "Explore the conversations freely. Create an account to contribute, connect, and be part of this community.",
   },
 };
 
@@ -113,23 +118,23 @@ export default function GrowingMessage({
           {msg.body}
         </p>
         <p style={{
-          fontSize: 14, fontStyle: "italic", marginBottom: 28,
-          color: "var(--color-muted-rose, #C99AA5)",
+          fontSize: 13, fontStyle: "italic", marginBottom: 28,
+          color: "var(--color-text-3, #9B94A3)", opacity: 0.75,
         }}>
           You are not early. You are exactly on time.
         </p>
-        <button
-          onClick={onClose}
+        <Link
+          href="/auth/signup"
           style={{
+            display: "inline-block",
             background: "var(--color-dusty-plum, #6E5A7E)", color: "#fff",
-            border: "none", borderRadius: 999, padding: "12px 32px",
+            textDecoration: "none", borderRadius: 999, padding: "12px 32px",
             fontSize: 14, fontWeight: 400,
             fontFamily: "var(--font-body, 'DM Sans', sans-serif)",
-            cursor: "pointer",
           }}
         >
-          I'll be here
-        </button>
+          Join Periwink
+        </Link>
       </div>
     </div>
   );
