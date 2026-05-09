@@ -466,12 +466,8 @@ export default function LandingPage() {
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap');
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
         body {
           font-family: 'Outfit', -apple-system, sans-serif;
-          background: #FFFFFF;
-          color: ${c.ink};
           -webkit-font-smoothing: antialiased;
         }
 

@@ -173,7 +173,138 @@ function ApplyForm() {
   );
 }
 
+type Tab = "groups" | "retreats" | "workshops" | "one-to-one";
+
+const TAB_LABELS: { id: Tab; label: string }[] = [
+  { id: "groups", label: "Groups" },
+  { id: "retreats", label: "Retreats" },
+  { id: "workshops", label: "Workshops" },
+  { id: "one-to-one", label: "One-to-One" },
+];
+
+function EmptyState({ title }: { title: string }) {
+  return (
+    <div style={{
+      background: c.card, border: `1px solid ${c.border}`,
+      borderRadius: 20, padding: "64px 32px",
+      textAlign: "center",
+    }}>
+      <h2 style={{
+        fontFamily: "var(--font-heading, 'Cormorant Garamond', serif)",
+        fontSize: 26, fontWeight: 300, color: c.ink, marginBottom: 12,
+      }}>
+        {title}
+      </h2>
+      <p style={{ fontSize: 15, color: c.inkMuted, lineHeight: 1.75 }}>
+        Nothing scheduled at this time. Please check back soon.
+      </p>
+    </div>
+  );
+}
+
+function OneToOneSection() {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+      {/* Main card */}
+      <div style={{
+        background: c.card, border: `1px solid ${c.border}`,
+        borderRadius: 20, padding: "40px 36px",
+      }}>
+        {/* Photo + name */}
+        <div style={{ display: "flex", alignItems: "center", gap: 20, marginBottom: 28 }}>
+          <img
+            src="/adrian-tubero.jpg"
+            alt="Dr. Adrian Tubero"
+            style={{
+              width: 80, height: 80, borderRadius: "50%",
+              objectFit: "cover",
+              border: `2px solid ${c.plumMist}`,
+              flexShrink: 0,
+            }}
+          />
+          <div>
+            <div style={{
+              fontFamily: "var(--font-heading, 'Cormorant Garamond', serif)",
+              fontSize: 20, fontWeight: 400, color: c.ink, marginBottom: 4,
+            }}>
+              Dr. Adrian Tubero, Psy.D.
+            </div>
+            <div style={{ fontSize: 13, color: c.plum, lineHeight: 1.5 }}>
+              Clinical Psychologist · AEDP · CSRT · 22 years experience
+            </div>
+          </div>
+        </div>
+
+        <h2 style={{
+          fontFamily: "var(--font-heading, 'Cormorant Garamond', serif)",
+          fontSize: "clamp(22px, 4vw, 28px)", fontWeight: 300,
+          color: c.ink, marginBottom: 20, lineHeight: 1.3,
+        }}>
+          One-to-One Work with Adrian
+        </h2>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: 16, marginBottom: 32 }}>
+          <p style={{ fontSize: 15, color: c.inkSoft, lineHeight: 1.85 }}>
+            Adrian is a clinical psychologist with over 20 years of experience helping people navigate emotional change, relationships, identity, and life transitions.
+          </p>
+          <p style={{ fontSize: 15, color: c.inkSoft, lineHeight: 1.85 }}>
+            Her work is depth-oriented, relational, and emotionally attuned. She helps people slow down, make sense of what is shifting internally, and reconnect with clarity, self-trust, and a more grounded sense of direction.
+          </p>
+          <p style={{ fontSize: 15, color: c.inkSoft, lineHeight: 1.85 }}>
+            For individual therapy or consultation inquiries, please visit Adrian&apos;s professional website.
+          </p>
+        </div>
+
+        {/* CTAs */}
+        <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+          <a
+            href="https://www.adriantubero.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-block",
+              background: c.plum, color: "#fff",
+              textDecoration: "none", borderRadius: 999,
+              padding: "12px 28px", fontSize: 14,
+              fontFamily: "var(--font-body, 'DM Sans', sans-serif)",
+            }}
+          >
+            Visit Adrian&apos;s website →
+          </a>
+          <Link
+            href="/"
+            style={{
+              display: "inline-block",
+              background: "transparent", color: c.plum,
+              textDecoration: "none", borderRadius: 999,
+              padding: "12px 28px", fontSize: 14,
+              border: `1px solid ${c.plumMist}`,
+              fontFamily: "var(--font-body, 'DM Sans', sans-serif)",
+            }}
+          >
+            Learn more about Adrian →
+          </Link>
+        </div>
+      </div>
+
+      {/* Reassurance note */}
+      <div style={{
+        background: `linear-gradient(135deg, ${c.plumWhisper}, ${c.ivory})`,
+        border: `1px solid ${c.plumMist}`,
+        borderRadius: 16, padding: "28px 32px",
+        textAlign: "center",
+      }}>
+        <p style={{ fontSize: 14, color: c.inkMuted, lineHeight: 1.75 }}>
+          The Periwink community is always free and open. Individual work with Adrian is an optional next step — not a requirement.
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export default function GroupsPage() {
+  const [activeTab, setActiveTab] = useState<Tab>("groups");
+
   return (
     <div style={{ color: c.ink }}>
 
@@ -210,6 +341,39 @@ export default function GroupsPage() {
           The Periwink community is always free &amp; open — groups are entirely optional
         </div>
       </div>
+
+      {/* Tab switcher */}
+      <div style={{
+        display: "flex", gap: 8, marginBottom: 28,
+        borderBottom: `1px solid ${c.border}`, paddingBottom: 0,
+        overflowX: "auto",
+      }}>
+        {TAB_LABELS.map(({ id, label }) => (
+          <button
+            key={id}
+            onClick={() => setActiveTab(id)}
+            style={{
+              background: "none", border: "none", cursor: "pointer",
+              padding: "10px 18px", fontSize: 14,
+              fontFamily: "var(--font-body, 'DM Sans', sans-serif)",
+              color: activeTab === id ? c.plum : c.inkMuted,
+              borderBottom: activeTab === id ? `2px solid ${c.plum}` : "2px solid transparent",
+              marginBottom: -1,
+              fontWeight: activeTab === id ? 500 : 400,
+              whiteSpace: "nowrap",
+              transition: "color 0.15s",
+            }}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+
+      {activeTab === "retreats" && <EmptyState title="Retreats" />}
+      {activeTab === "workshops" && <EmptyState title="Workshops" />}
+      {activeTab === "one-to-one" && <OneToOneSection />}
+
+      {activeTab === "groups" && <>
 
       {/* Intro: different from going through it alone */}
       <div style={{
@@ -378,31 +542,6 @@ export default function GroupsPage() {
         </div>
       </div>
 
-      {/* Coming soon */}
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-        gap: 16,
-        marginBottom: 40,
-      }}>
-        {[
-          { icon: "🌿", title: "Retreats", desc: "Immersive in-person retreats. Dates and locations coming soon." },
-          { icon: "💬", title: "Workshops", desc: "Focused single-session workshops on specific themes. More soon." },
-          { icon: "🤝", title: "One-on-one", desc: "Individual sessions with Dr. Tubero in NYC or via video." },
-        ].map(item => (
-          <div key={item.title} style={{
-            background: c.card, border: `1px solid ${c.border}`,
-            borderRadius: 16, padding: "24px 20px",
-          }}>
-            <div style={{ fontSize: 24, marginBottom: 10 }}>{item.icon}</div>
-            <h3 style={{ fontFamily: "var(--font-heading)", fontSize: 18, fontWeight: 400, color: c.ink, marginBottom: 6 }}>
-              {item.title}
-            </h3>
-            <p style={{ fontSize: 13, color: c.inkSoft, lineHeight: 1.6 }}>{item.desc}</p>
-          </div>
-        ))}
-      </div>
-
       {/* Application form */}
       <div id="apply" style={{
         background: c.card, border: `1px solid ${c.border}`,
@@ -463,6 +602,8 @@ export default function GroupsPage() {
           </a>
         </div>
       </div>
+
+      </>}
 
     </div>
   );
