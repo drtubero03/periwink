@@ -590,6 +590,186 @@ const POSTS: SeedPost[] = [
     daysAgo: 1,
     hoursAgo: 14,
   },
+
+  // ── brain-fog (5 posts, indices 51–55) ───────────────────────────────
+  {
+    roomSlug: "brain-fog",
+    authorPseudonym: "GoldenThread",
+    title: "I'm a writer and I can't find my words anymore",
+    body: "Words are literally my job. I make a living constructing sentences that land, that feel precise, that mean something. And now I sit in front of a document and the word I need hovers just out of reach. I know it's there. I can feel its shape. I can describe everything around it. But the word itself — gone. I've started keeping a thesaurus open not because I want a better word, but because I need any word at all.\n\nLast week I wrote 'that thing on the wall that tells time' in a draft and just left it there and kept going. I came back later and filled it in. That's my life now.\n\nI don't know how to explain the specific grief of losing fluency in the only language you've ever fully spoken. It's not just inconvenient. It's destabilizing in a way I wasn't prepared for.",
+    identity: "PSEUDONYM",
+    isPinned: true,
+    daysAgo: 31,
+    hoursAgo: 10,
+  },
+  {
+    roomSlug: "brain-fog",
+    authorPseudonym: "WinterBloom",
+    title: "I'm scared this is early dementia. Someone talk me down.",
+    body: "My mother had Alzheimer's. Diagnosed at 65. I watched the whole thing. So when I started forgetting names, losing entire words mid-sentence, walking into rooms with no idea why I came — I went straight to catastrophe. I spent two weeks convinced I was watching the beginning of my own decline.\n\nI finally told my GP. She was calm about it in a way that helped, and also ordered a cognitive test plus hormone bloodwork. The cognitive test was fine. The hormones were, in her words, 'in the basement.'\n\nShe said: 'This is perimenopause, not dementia. They feel similar and they scare the same people.' I cried in her office. From relief and from embarrassment at how much I'd scared myself.\n\nI still watch for signs. Probably always will with my family history. But knowing there's a hormonal explanation first — that matters. Has anyone else been through this fear?",
+    identity: "PSEUDONYM",
+    isPinned: false,
+    daysAgo: 26,
+    hoursAgo: 14,
+  },
+  {
+    roomSlug: "brain-fog",
+    authorPseudonym: "TidalGrace",
+    title: "From the other side: my brain didn't disappear. It changed.",
+    body: "I want to offer something honest, not a speech about silver linings.\n\nI'm 57. I went through the worst of the cognitive fog between 50 and 53. Those three years, I lost words constantly. I made mistakes I wouldn't have made at 40. I second-guessed myself in ways that felt new and unwelcome.\n\nHere's what's true now: it lifted. Not all at once. Not dramatically. More like gradually noticing you're not searching as hard anymore. My brain is different than it was at 40 — I won't pretend otherwise. I'm not as fast in the same ways. But I'm more deliberate. I notice things I used to speed past. I've become better at some things, worse at others.\n\nWhat I want you to know is that the fog is not permanent for most women. The brain that comes out the other side is still yours. It went through something, and it carries that, but it didn't disappear.\n\nHold on.",
+    identity: "PSEUDONYM",
+    isPinned: false,
+    daysAgo: 20,
+    hoursAgo: 7,
+  },
+  {
+    roomSlug: "brain-fog",
+    authorPseudonym: "QuietStorm42",
+    title: "Practical systems that actually help (the ones I still use after 2 years)",
+    body: "I'm a software engineer. I had to get systematic about this or my career was going to suffer. Two years in, here's what's still in use:\n\n**The everything notebook.** One physical notebook, always open next to my laptop. If I think it, I write it immediately. Not later. Not in a note app. On paper, now.\n\n**Meeting prep the night before.** I spend 10 minutes the evening before any important meeting writing bullet points of what I want to say. In the meeting, I have them in front of me. I don't wing it anymore.\n\n**The 'parking lot' habit.** When a word or name escapes me mid-sentence, I say 'hang on, I'll come back to that' and keep moving. Usually it surfaces in 60 seconds if I don't chase it.\n\n**Front-loading the hard work.** My brain is sharpest in the morning. Complex things go there. Administrative things go in the afternoon when I'm already running on fumes.\n\nSystems don't have hormonal fluctuations. I do. So I built around that.\n\nWhat are yours?",
+    identity: "PSEUDONYM",
+    isPinned: true,
+    daysAgo: 14,
+    hoursAgo: 9,
+  },
+  {
+    roomSlug: "brain-fog",
+    authorPseudonym: "NightOwl3am",
+    title: "The CEO noticed I was struggling. I'm not okay.",
+    body: "I've been holding this for a week and I need to put it somewhere.\n\nI'm in a director-level role. I've been in this field for fifteen years. I know this work. And last Tuesday in an executive meeting I lost my train of thought in the middle of a presentation I'd given a version of three times before. Not a small stumble. A full stop. Long enough that my CEO said, gently, 'Take your time.' Which was kind. Which made it worse.\n\nAfterwards she asked if I was alright. I said yes. What was I supposed to say? 'Actually I think my hormones are eating my professional identity and I'm terrified'?\n\nI've built my entire sense of self around being sharp, quick, reliable. And I am not those things right now in the same way. I don't know how to hold that and still show up.\n\nHow are you all doing it? How do you keep your professional identity intact when your brain is doing this?",
+    identity: "PSEUDONYM",
+    isPinned: false,
+    daysAgo: 8,
+    hoursAgo: 21,
+  },
+
+  // ── becoming (5 posts, indices 56–60) ────────────────────────────────
+  {
+    roomSlug: "becoming",
+    authorPseudonym: "TidalGrace",
+    title: "I don't recognize who I was ten years ago. That feels like progress.",
+    body: "I've been sitting with this for a while, trying to figure out if it's something worth saying or just something that sounds nice.\n\nI think it's worth saying.\n\nTen years ago I was more agreeable. More anxious about being liked. More willing to bend myself into shapes that didn't fit so I wouldn't inconvenience anyone. I called it being flexible. It was something else.\n\nMenopause didn't transform me. But it cracked something open. The energy I used to spend managing other people's comfort became unavailable. My body took it. And what was left — this stubborn, sometimes impatient, deeply tired person — turned out to be more real than the agreeable version.\n\nI don't recognize who I was. I also don't miss her, which took a long time to be okay to admit.\n\nIs this loss? Maybe. But it feels more like clarification. Like the image finally came into focus.",
+    identity: "PSEUDONYM",
+    isPinned: true,
+    daysAgo: 35,
+    hoursAgo: 8,
+  },
+  {
+    roomSlug: "becoming",
+    authorPseudonym: "MoonlitSage",
+    title: "I can't tolerate inauthenticity anymore. Is that wisdom or just intolerance?",
+    body: "Something shifted and now I can't pretend. I don't mean I'm rude. I mean I'm no longer able to perform interest I don't feel, warmth I don't have, enthusiasm I'm not experiencing. It used to come naturally — or at least automatically. Now it costs something I don't have.\n\nSmall talk with people I don't actually connect with feels like sandpaper. Meetings that could be emails are physically uncomfortable. Relationships where I'm doing all the holding together feel suddenly, obviously unsustainable.\n\nI can't tell if this is wisdom — finally being done performing — or if I've lost something that made me functional in the world. Maybe both.\n\nA friend said I've become 'difficult.' I said I've become honest. I'm not sure who's right. Has anyone else found themselves suddenly, stubbornly unable to pretend?",
+    identity: "PSEUDONYM",
+    isPinned: false,
+    daysAgo: 28,
+    hoursAgo: 16,
+  },
+  {
+    roomSlug: "becoming",
+    authorPseudonym: "GoldenThread",
+    title: "I miss who I used to be and also don't want to go back",
+    body: "The contradiction that's been living in my chest for the past year:\n\nI miss her. The version of me who had more energy, whose brain worked faster, who didn't spend half her mental life managing symptoms. She wrote better. She was more present. She laughed more easily.\n\nAnd also — I would not go back.\n\nBecause she said yes to things I shouldn't have. She stayed in rooms she should have left years earlier. She was so busy being competent and available and fine that she didn't notice she was also slowly disappearing inside all of it.\n\nThis version of me is harder to be around, I think. She has opinions. She leaves meetings early. She says 'I can't do that' without always explaining why. She is less performing and more present in a way that sometimes looks like withdrawal.\n\nI don't know how to grieve someone and also be relieved she's gone. I'm trying to let both things be true at the same time.",
+    identity: "PSEUDONYM",
+    isPinned: false,
+    daysAgo: 22,
+    hoursAgo: 11,
+  },
+  {
+    roomSlug: "becoming",
+    authorPseudonym: "WinterBloom",
+    title: "I left a 15-year career last month. No plan. Completely terrified.",
+    body: "I was a hospital administrator for fifteen years. Good at it. Respected. Hated it for at least the last five. I stayed because I was good at it, because the salary was reliable, because I'd invested so much I couldn't imagine walking away.\n\nLast month I walked away.\n\nI have some savings. I have a mortgage. I have absolutely no idea what comes next. I wake up in the night — different wake-ups from the perimenopause ones, this is more specific dread — and I think: what did you do.\n\nAnd then in the morning I make coffee and I sit with the quiet and I think: thank god.\n\nBoth of those are true every single day. I'm not looking for reassurance that I made the right choice — I can't know that yet. I just needed to say it somewhere where someone might understand that terror and relief can happen at the same time, in the same body.",
+    identity: "PSEUDONYM",
+    isPinned: false,
+    daysAgo: 16,
+    hoursAgo: 9,
+  },
+  {
+    roomSlug: "becoming",
+    authorPseudonym: "VelvetDusk",
+    title: "My therapist asked 'what do you actually want?' and I had nothing",
+    body: "She asked it gently. It's not like she ambushed me. We'd been building toward it. And when she said it — 'So what do you actually want, for yourself, right now?' — I just started crying.\n\nNot sad crying. The kind where your body is releasing something you didn't know you'd been holding.\n\nI have no idea what I want. I know what I'm supposed to want. I know what would make other people's lives easier. I know what I used to want before I got so busy being useful. But what I actually want right now for myself?\n\nBlank.\n\nI don't think this is a perimenopause problem specifically. I think I've been operating on 'what's needed' for so long that 'what do I want' has gone silent. But something about this transition — the body changing, the identity shifting — it's making the question impossible to ignore anymore.\n\nHas anyone else been sitting with this question? I'd like to know I'm not the only one who doesn't have an answer.",
+    identity: "PSEUDONYM",
+    isPinned: false,
+    daysAgo: 10,
+    hoursAgo: 17,
+  },
+
+  // ── mood deepening (3 posts, indices 61–63) ──────────────────────────
+  {
+    roomSlug: "mood",
+    authorPseudonym: "DesertRose",
+    title: "Rage first. Tears after. Every single time.",
+    body: "I've noticed a pattern I don't love.\n\nSomething happens. Not always something big — a comment, a piece of mail, someone moving my things. And the first thing that arrives is rage. Not annoyance. Not frustration. Full, disproportionate rage. It floods in fast and I feel it in my face and my hands before I've had a conscious thought about it.\n\nAnd then — always — the tears. Usually within the hour. Sometimes sooner. The rage clears and I'm left with something smaller and sadder underneath it. Whatever the real feeling was, it comes second.\n\nI've started to understand that the rage is faster. It gets there first. The sadness needs more space.\n\nBut here's the part I'm ashamed of: I've scared people. My daughter. A friend who didn't understand. There's a version of me I don't fully recognize in those first moments, and making peace with her — with the fact that she's still me — is the work I'm in right now.",
+    identity: "PSEUDONYM",
+    isPinned: false,
+    daysAgo: 18,
+    hoursAgo: 12,
+  },
+  {
+    roomSlug: "mood",
+    authorPseudonym: "SilverLining",
+    title: "I thought it was depression. My doctor agreed. It wasn't.",
+    body: "I want to share this because I spent eighteen months on an SSRI that didn't help and I think some of you might be in the same situation I was.\n\nAt 48 I went to my GP with the classic presentation: low mood, no motivation, nothing felt interesting, flat affect. She diagnosed depression. Started me on an antidepressant. I took it for a year and a half. It took the edge off the worst of it but I never felt like myself.\n\nA new GP — younger, seemed more current on menopause — asked about my cycles, my sleep, my temperature regulation. She ordered a full hormone panel. My estrogen was, in her words, 'remarkably low for your age.'\n\nShe said: 'Some women present with what looks like depression but is actually a hormonal deficiency. They respond to HRT better than antidepressants.'\n\nI was furious and relieved in equal measure. Eighteen months. I want them back.\n\nI'm on HRT now. It's been three months. I feel like myself again — actually myself, not a blunted version.\n\nIf you've been on antidepressants for 'depression' that showed up suddenly in your mid-to-late 40s, please ask about your hormones. I'm not saying it's everyone's answer. But it was mine.",
+    identity: "PSEUDONYM",
+    isPinned: true,
+    daysAgo: 12,
+    hoursAgo: 8,
+  },
+  {
+    roomSlug: "mood",
+    authorPseudonym: "WildSage",
+    title: "Everything is too loud, too bright, too much — and nobody warned me",
+    body: "I thought I was going crazy.\n\nSounds started bothering me that never used to register. The dishwasher. Traffic. My children's voices when they overlap. Music I used to love. Fluorescent lights in the grocery store. Crowds.\n\nI found myself flinching at things. Needing quiet in a way that felt urgent, physical, almost desperate. My daughter would come home from school and start talking and I'd have to do something with my face so she couldn't see that the sound of her voice — her voice, someone I love — was genuinely hurting me.\n\nI started googling 'sensory sensitivity menopause' and found almost nothing mainstream. Found some forum posts from other women describing the exact same thing. Finally brought it up with my naturopath, who said estrogen plays a role in how the nervous system processes sensory input. When it drops, the filter weakens.\n\nNobody in any of the standard menopause resources mentioned this. Not the leaflets. Not the NHS website. Not the book my GP gave me.\n\nWhy is this not on the list?",
+    identity: "PSEUDONYM",
+    isPinned: false,
+    daysAgo: 6,
+    hoursAgo: 15,
+  },
+
+  // ── relationships deepening (2 posts, indices 64–65) ─────────────────
+  {
+    roomSlug: "relationships",
+    authorPseudonym: "MoonlitSage",
+    title: "He said 'you used to be fun.' I didn't speak to him for three days.",
+    body: "We were in the middle of an argument about something I can't even fully reconstruct — one of those fights where the original cause gets buried under everything it triggers. And he said it. 'You used to be fun. You used to laugh more.'\n\nI didn't yell. I went very quiet, which I think scared him more.\n\nI thought about it for three days. I didn't answer him for three days. Not to punish him — I actually needed the three days to understand why it hit the way it did.\n\nBecause he's not entirely wrong, which is the part I hate. I am different. I do laugh less. Things that used to roll off me don't anymore. The version of me that existed five years ago was easier to be around, partly because she worked very hard at being easy to be around.\n\nBut I'm also furious at the framing. 'You used to be fun' like joy is a performance I'm failing to deliver. Like I was more valuable when I was easier. Like the harder version — the one who gets tired, who can't pretend, who sometimes goes quiet for three days — is a disappointment.\n\nWe talked eventually. It didn't resolve cleanly. I'm not sure it should.",
+    identity: "PSEUDONYM",
+    isPinned: false,
+    daysAgo: 14,
+    hoursAgo: 18,
+  },
+  {
+    roomSlug: "relationships",
+    authorPseudonym: "GoldenThread",
+    title: "Learning to be honest about my body, for the first time in 22 years of marriage",
+    body: "We've been married for twenty-two years. He has seen me at my worst — sick, exhausted, postpartum, grieving. And I still couldn't tell him what was happening to my body.\n\nNot because he wouldn't understand. Because I hadn't let myself understand it first.\n\nSomething about this transition forced me to actually look at what was happening — the dryness, the changed sensation, the way I sometimes wanted to be touched and sometimes couldn't bear it — and once I'd looked at it, I had to decide whether to keep it to myself or actually say it out loud.\n\nI said it out loud. Over dinner, somewhat unexpectedly, in a stumbling, not-at-all-graceful way. I said: 'Something's changing with my body and I don't always know how to tell you what I need and sometimes I go quiet because I'm trying to figure it out myself first.'\n\nHe listened. He didn't try to fix it. He said 'okay, I'm glad you told me.'\n\nTwenty-two years in and I'm still learning how to be honest with someone who loves me. That's both a little sad and entirely okay.",
+    identity: "PSEUDONYM",
+    isPinned: false,
+    daysAgo: 9,
+    hoursAgo: 13,
+  },
+
+  // ── body-changes deepening (2 posts, indices 66–67) ──────────────────
+  {
+    roomSlug: "body-changes",
+    authorPseudonym: "TidalGrace",
+    title: "This body carried me. I owe it something other than criticism.",
+    body: "I want to write something honest, not something that sounds like a self-help caption.\n\nI stood in front of the mirror last week — full-length, which I hadn't done in a while — and I was prepared to do the inventory. The list I used to do automatically: this needs work, that's gotten worse, look at what's happened to that.\n\nAnd instead I just... stopped.\n\nBecause I suddenly thought about what this body has actually done. It got me through my twenties when I didn't know how to take care of it at all. It carried two pregnancies. It showed up for work for thirty years. It sat with my mother while she was dying. It survived two surgeries, a car accident, a grief I thought might kill me. It went through menopause — the whole thing — while I was furious at it for changing.\n\nNone of that is an argument that the body looks good. It doesn't, by the standards I was raised on. But I'm not sure those standards were measuring anything real.\n\nI'm not saying I love every bit of it. I'm saying it did its job, and I was too busy criticizing it to notice.",
+    identity: "PSEUDONYM",
+    isPinned: false,
+    daysAgo: 11,
+    hoursAgo: 7,
+  },
+  {
+    roomSlug: "body-changes",
+    authorPseudonym: "CopperMoon",
+    title: "I put on a pair of jeans for the first time in three years",
+    body: "This sounds like nothing. I know it sounds like nothing.\n\nI'm a fitness instructor. I teach four classes a week. I have always been comfortable in my body — it's part of how I've shown up in my work. And then perimenopause redistributed everything, particularly around my middle, and jeans just... stopped fitting the way they used to. So I stopped wearing them. Leggings, stretchy trousers, anything with give. I told myself I was just dressing practically.\n\nLast weekend I bought a pair of jeans in the size that actually fits now. Not the size I used to wear. The size that fits.\n\nI stood in the dressing room for a while. They looked fine. Good, actually. Different than I expected to look, but fine.\n\nI wore them out to dinner. My husband said I looked nice. My daughter said 'are those new?' and I said yes.\n\nIt's not a transformation story. I didn't suddenly love my body or get over anything. But I put on a pair of jeans and I didn't take them off, and that felt like something I needed to tell someone.",
+    identity: "PSEUDONYM",
+    isPinned: false,
+    daysAgo: 4,
+    hoursAgo: 10,
+  },
 ];
 
 // ============================================================================
@@ -865,6 +1045,110 @@ const COMMENTS: SeedComment[] = [
   { postIndex: 50, authorPseudonym: "SteadyRain", body: "In education, I got an oscillating fan for my classroom and the ability to step into the hallway for a minute. Small things that made a big difference. Ask for what you need.", identity: "PSEUDONYM", hoursAfterPost: 8 },
   { postIndex: 50, authorPseudonym: "TidalGrace", body: "Asking for permission to be human. That line will stay with me. You shouldn't have to ask. But until the world catches up, advocating for yourself is an act of courage.", identity: "PSEUDONYM", hoursAfterPost: 14 },
   { postIndex: 50, authorPseudonym: "GoldenThread", body: "The UK is ahead on this — some companies now have menopause policies. For anyone in the US, check if your state has any protections. It's starting to change, slowly.", identity: "PSEUDONYM", hoursAfterPost: 22 },
+
+  // ── Post 51: "I'm a writer and I can't find my words" (brain-fog) ─────
+  { postIndex: 51, authorPseudonym: "MoonlitSage", body: "'That thing on the wall that tells time.' I want to cry laughing because I have absolutely done this. In a patient note. The specific grief of losing fluency — you named it perfectly.", identity: "PSEUDONYM", hoursAfterPost: 2 },
+  { postIndex: 51, authorPseudonym: "QuietStorm42", body: "I'm an engineer and I lose the names of functions I've written myself. I cannot imagine what it's like when language is your entire instrument. I'm sorry. This is genuinely unfair.", identity: "PSEUDONYM", hoursAfterPost: 5 },
+  { postIndex: 51, authorPseudonym: "TidalGrace", body: "The shape of the word — I know exactly what you mean. It's there but just out of grasp. For what it's worth, even this post, about losing words, is beautifully written. The capacity is still there.", identity: "PSEUDONYM", hoursAfterPost: 9 },
+  { postIndex: 51, authorPseudonym: "VelvetDusk", body: "Did you try HRT? I've read that for some women the word-finding specifically improves with estrogen. I'm not saying it's a solution but I'd want to know if it helped you.", identity: "PSEUDONYM", hoursAfterPost: 18 },
+  { postIndex: 51, authorPseudonym: "GoldenThread", body: "Following up on the HRT question — yes, I started a low-dose patch six weeks ago. It's not back to what it was but the searching feels shorter now. I'll take it.", identity: "PSEUDONYM", hoursAfterPost: 30, parentCommentOffset: 3 },
+
+  // ── Post 52: "I'm scared this is early dementia" (brain-fog) ──────────
+  { postIndex: 52, authorPseudonym: "SilverLining", body: "I had this exact terror. My aunt had dementia. Every forgotten word felt like a data point. Getting the hormone panel back and seeing the numbers was the thing that broke the catastrophizing loop for me. Data helps.", identity: "PSEUDONYM", hoursAfterPost: 2 },
+  { postIndex: 52, authorPseudonym: "MoonlitSage", body: "As a nurse — the symptom overlap between perimenopause brain fog and early cognitive decline is real, and it makes sense you were scared. Getting properly evaluated was exactly the right call. The fact that your cognitive test was fine is genuinely meaningful.", identity: "PSEUDONYM", hoursAfterPost: 6 },
+  { postIndex: 52, authorPseudonym: "NightOwl3am", body: "Two weeks convinced you were watching the beginning of your own decline — I felt sick reading that. The fear is so specific and so lonely. I'm glad you got answers.", identity: "PSEUDONYM", hoursAfterPost: 11 },
+  { postIndex: 52, authorPseudonym: "DesertRose", body: "For anyone reading this with the same fear: please bring it to your doctor explicitly. Don't hint at it. Say 'I'm worried this might be early dementia.' The conversation is worth having.", identity: "PSEUDONYM", hoursAfterPost: 22 },
+
+  // ── Post 53: "From the other side: my brain didn't disappear" (brain-fog)
+  { postIndex: 53, authorPseudonym: "NightOwl3am", body: "I'm going to read this every time I sit in a meeting and can't find a word. 'Hold on' is going in my back pocket.", identity: "PSEUDONYM", hoursAfterPost: 3 },
+  { postIndex: 53, authorPseudonym: "WinterBloom", body: "More deliberate. That's what I want to believe about myself on the other side. Thank you for making it sound possible without making it sound easy.", identity: "PSEUDONYM", hoursAfterPost: 7 },
+  { postIndex: 53, authorPseudonym: "GoldenThread", body: "The fog is not permanent for most women. I needed someone with real experience to say that. Not a pamphlet. Someone who's been through it.", identity: "PSEUDONYM", hoursAfterPost: 14 },
+  { postIndex: 53, authorPseudonym: "DesertRose", body: "How long did yours last — from worst to clearly improving? I'm in the middle and trying to gauge what I'm dealing with.", identity: "PSEUDONYM", hoursAfterPost: 28 },
+  { postIndex: 53, authorPseudonym: "TidalGrace", body: "For me, the worst was 50-53 and I started noticing real improvement at 54. HRT also helped significantly. Everyone's timeline is different but three years wasn't forever, even though it felt like it.", identity: "PSEUDONYM", hoursAfterPost: 32, parentCommentOffset: 3 },
+
+  // ── Post 54: "Practical systems that actually help" (brain-fog) ────────
+  { postIndex: 54, authorPseudonym: "SteadyRain", body: "The everything notebook has changed my teaching life. I started one last term and the difference is real. Stopped trusting my brain to hold things. Paper doesn't have bad days.", identity: "PSEUDONYM", hoursAfterPost: 2 },
+  { postIndex: 54, authorPseudonym: "GoldenThread", body: "The parking lot habit for words — I've been doing something similar without naming it. 'I'll come back to that' and then just continuing. It works. The word usually surfaces. Chasing it makes it worse.", identity: "PSEUDONYM", hoursAfterPost: 5 },
+  { postIndex: 54, authorPseudonym: "WinterBloom", body: "Front-loading the hard work in the morning is the one I needed most. I've been trying to push through the afternoon fog instead of just accepting it and adjusting. Working smarter, not harder — at last I actually understand what that means.", identity: "PSEUDONYM", hoursAfterPost: 12 },
+  { postIndex: 54, authorPseudonym: "MoonlitSage", body: "Systems don't have hormonal fluctuations. I need this on a mug. In large print. Possibly tattooed somewhere.", identity: "PSEUDONYM", hoursAfterPost: 24 },
+
+  // ── Post 55: "The CEO noticed I was struggling" (brain-fog) ──────────
+  { postIndex: 55, authorPseudonym: "QuietStorm42", body: "I lost my train of thought in a code review last month. The junior dev on the call looked at me and I wanted to evaporate. You're not alone in this. Director-level, senior engineer, teacher — none of it protects you from the fog.", identity: "PSEUDONYM", hoursAfterPost: 3 },
+  { postIndex: 55, authorPseudonym: "TidalGrace", body: "I was in a similar role when mine was at its worst. What helped me was telling one trusted colleague — just one — what was happening. Not HR. Not my manager. Just someone I trusted. The hiding was its own exhaustion.", identity: "PSEUDONYM", hoursAfterPost: 8 },
+  { postIndex: 55, authorPseudonym: "SilverLining", body: "Your CEO being kind about it — she might understand more than you think. You don't have to disclose. But 'Take your time' from a senior leader isn't nothing.", identity: "PSEUDONYM", hoursAfterPost: 15 },
+  { postIndex: 55, authorPseudonym: "WildSage", body: "The identity piece is what gets me about this post. You're not just losing clarity — you're losing the story you told about yourself. That's a different kind of loss and it deserves to be named as one.", identity: "PSEUDONYM", hoursAfterPost: 30 },
+
+  // ── Post 56: "I don't recognize who I was ten years ago" (becoming) ───
+  { postIndex: 56, authorPseudonym: "GoldenThread", body: "More real than the agreeable version. I've been circling this thought for months without being able to say it. That's the thing, isn't it — we called it flexibility and it was erasure.", identity: "PSEUDONYM", hoursAfterPost: 2 },
+  { postIndex: 56, authorPseudonym: "WinterBloom", body: "I don't miss her either. That took me a long time to admit without guilt. Thank you for saying it first.", identity: "PSEUDONYM", hoursAfterPost: 6 },
+  { postIndex: 56, authorPseudonym: "VelvetDusk", body: "I'm afraid of what I might become. Reading this makes it sound less frightening. Like clarification rather than disintegration.", identity: "PSEUDONYM", hoursAfterPost: 12 },
+  { postIndex: 56, authorPseudonym: "MoonlitSage", body: "The energy I used to spend managing other people's comfort became unavailable. This is the most accurate description of perimenopause I've ever read and it has nothing to do with hot flashes.", identity: "PSEUDONYM", hoursAfterPost: 24 },
+
+  // ── Post 57: "I can't tolerate inauthenticity anymore" (becoming) ──────
+  { postIndex: 57, authorPseudonym: "TidalGrace", body: "I became 'difficult' too, apparently. I prefer 'done performing.' Both can be true. The people who called me difficult were usually the ones who benefited from my performance.", identity: "PSEUDONYM", hoursAfterPost: 3 },
+  { postIndex: 57, authorPseudonym: "DesertRose", body: "Small talk feeling like sandpaper — yes. I've started just not doing it. Not rudely, but honestly. I'd rather have silence than talk about the weather for ten minutes with someone I'll never know.", identity: "PSEUDONYM", hoursAfterPost: 8 },
+  { postIndex: 57, authorPseudonym: "SteadyRain", body: "I want to gently push back — there might be a middle ground between performing warmth you don't feel and withdrawing entirely. I've been trying to find it. Some people I let in more slowly now. Some I've let go. It's not all or nothing.", identity: "PSEUDONYM", hoursAfterPost: 16 },
+  { postIndex: 57, authorPseudonym: "MoonlitSage", body: "I think 'difficult' and 'honest' are both accurate. The question is whether the people calling you difficult are ones whose opinion you still need to carry.", identity: "PSEUDONYM", hoursAfterPost: 36 },
+
+  // ── Post 58: "I miss who I used to be and also don't want to go back" (becoming)
+  { postIndex: 58, authorPseudonym: "TidalGrace", body: "She said yes to things I shouldn't have. That line cracked something open for me. We mistake accommodation for virtue for so long.", identity: "PSEUDONYM", hoursAfterPost: 2 },
+  { postIndex: 58, authorPseudonym: "VelvetDusk", body: "The grief and the relief at the same time. I'm not there yet — I'm still mostly in the grief part — but knowing they can coexist makes the grief feel less like a verdict.", identity: "PSEUDONYM", hoursAfterPost: 7 },
+  { postIndex: 58, authorPseudonym: "NightOwl3am", body: "This version is less performing and more present. I'm going to hold onto that. The performing takes so much. What if what's left underneath is actually more real?", identity: "PSEUDONYM", hoursAfterPost: 14 },
+  { postIndex: 58, authorPseudonym: "SilverLining", body: "She was also slowly disappearing inside all of it. I read this and thought: I did that for twenty years before I even noticed. You're noticing it while it's happening. That's different.", identity: "PSEUDONYM", hoursAfterPost: 28 },
+
+  // ── Post 59: "I left a 15-year career last month" (becoming) ──────────
+  { postIndex: 59, authorPseudonym: "MoonlitSage", body: "Terror and relief in the same body, every morning. That's it. That's exactly what leaving something that's slowly killing you feels like. I left nursing's worst aspects and felt both every day for months.", identity: "PSEUDONYM", hoursAfterPost: 2 },
+  { postIndex: 59, authorPseudonym: "TidalGrace", body: "You don't need anyone to tell you it was the right choice yet. You just need time. Most of the best decisions I've made looked terrifying for at least a year.", identity: "PSEUDONYM", hoursAfterPost: 8 },
+  { postIndex: 59, authorPseudonym: "QuietStorm42", body: "The morning coffee and the quiet and thank god. That detail is everything. The body knows before the brain catches up.", identity: "PSEUDONYM", hoursAfterPost: 18 },
+  { postIndex: 59, authorPseudonym: "WildSage", body: "Good for you for naming the dread specifically as different from the perimenopause wake-ups. You know yourself well. That matters more than having a plan.", identity: "PSEUDONYM", hoursAfterPost: 30 },
+
+  // ── Post 60: "My therapist asked what do you actually want" (becoming) ─
+  { postIndex: 60, authorPseudonym: "GoldenThread", body: "I sat with that question for an entire year. Still don't have a complete answer. But I've started to notice the small things that make me feel like myself — and that's turned out to be where the answer lives. Not in big declarations.", identity: "PSEUDONYM", hoursAfterPost: 3 },
+  { postIndex: 60, authorPseudonym: "TidalGrace", body: "Operating on 'what's needed' for so long that 'what do I want' went silent. This is so many of us. I think the transition forces the question because for the first time we don't have the energy to keep ignoring it.", identity: "PSEUDONYM", hoursAfterPost: 7 },
+  { postIndex: 60, authorPseudonym: "WinterBloom", body: "I cried reading this in the parking lot outside my gym. I don't have an answer either. But I feel less alone not having one.", identity: "PSEUDONYM", hoursAfterPost: 13 },
+  { postIndex: 60, authorPseudonym: "SteadyRain", body: "My therapist asked me the same question three years ago. I'm just starting to have fragments of an answer. Give it time. The wanting doesn't disappear — it just needs a different kind of listening.", identity: "PSEUDONYM", hoursAfterPost: 22 },
+
+  // ── Post 61: "Rage first. Tears after." (mood) ────────────────────────
+  { postIndex: 61, authorPseudonym: "NightOwl3am", body: "Rage is faster — the sadness needs more space. Yes. This is it. This is the thing I've been trying to describe to my husband for two years. Thank you for giving me the words.", identity: "PSEUDONYM", hoursAfterPost: 2 },
+  { postIndex: 61, authorPseudonym: "SilverLining", body: "The shame about the rage is its own thing. I used to lie awake replaying the moments where the rage arrived first and wondering what kind of person I was. Understanding the mechanism helped a little. You're not frightening. You're flooded.", identity: "PSEUDONYM", hoursAfterPost: 6 },
+  { postIndex: 61, authorPseudonym: "TidalGrace", body: "Making peace with her — the person you don't fully recognize in those first moments — is such honest framing. She's still you. She's just the part that gets there first.", identity: "PSEUDONYM", hoursAfterPost: 12 },
+  { postIndex: 61, authorPseudonym: "WinterBloom", body: "I scared my daughter too. She's 12 and she's started going quiet when I come home, just in case. That broke me more than anything else has. I'm in therapy specifically for the rage now.", identity: "PSEUDONYM", hoursAfterPost: 20 },
+
+  // ── Post 62: "I thought it was depression. My doctor agreed." (mood) ───
+  { postIndex: 62, authorPseudonym: "MoonlitSage", body: "Eighteen months on the wrong treatment. I'm furious on your behalf and also grateful you're sharing this. This exact thing — perimenopause presenting as depression — is so common and so under-recognised. Please keep telling this story.", identity: "PSEUDONYM", hoursAfterPost: 2 },
+  { postIndex: 62, authorPseudonym: "QuietStorm42", body: "I've been on an SSRI for eight months. Reading this and thinking very hard. My hormones have never been checked. How do I bring this up without my doctor thinking I'm self-diagnosing from the internet?", identity: "PSEUDONYM", hoursAfterPost: 5 },
+  { postIndex: 62, authorPseudonym: "SilverLining", body: "Say exactly what you said here: 'I've been on this medication for eight months and I'm not feeling like myself. I'd like to rule out a hormonal component before we continue.' That's it. That's the sentence. You're not diagnosing yourself — you're asking for data.", identity: "PSEUDONYM", hoursAfterPost: 7, parentCommentOffset: 1 },
+  { postIndex: 62, authorPseudonym: "NightOwl3am", body: "I want them back too — those eighteen months. You named the thing I feel about a lot of this: the time lost to not knowing. That grief is real even when you're doing better now.", identity: "PSEUDONYM", hoursAfterPost: 16 },
+
+  // ── Post 63: "Everything is too loud, too bright, too much" (mood) ─────
+  { postIndex: 63, authorPseudonym: "GoldenThread", body: "The sound of someone you love hurting you. I know that guilt intimately. My husband talking — just talking — in the car has become almost unbearable some days. I've said 'can we just drive quietly for a bit' more times than I can count.", identity: "PSEUDONYM", hoursAfterPost: 3 },
+  { postIndex: 63, authorPseudonym: "MoonlitSage", body: "The nervous system piece is real and barely discussed. Estrogen helps modulate how the central nervous system responds to stimuli. When it drops, everything gets louder — literally. Not in your head.", identity: "PSEUDONYM", hoursAfterPost: 8 },
+  { postIndex: 63, authorPseudonym: "TidalGrace", body: "Magnesium glycinate helped my sensory sensitivity more than I expected. Also reducing caffeine — reluctantly. The grocery store fluorescents are still terrible but I can get through without wanting to run.", identity: "PSEUDONYM", hoursAfterPost: 14 },
+  { postIndex: 63, authorPseudonym: "SteadyRain", body: "Why is this not on the list — this is the question I have about half my symptoms. The NHS leaflet should be a book. A long book. With an index.", identity: "PSEUDONYM", hoursAfterPost: 25 },
+
+  // ── Post 64: "He said you used to be fun" (relationships) ─────────────
+  { postIndex: 64, authorPseudonym: "GoldenThread", body: "Three days of quiet as thinking, not punishment. I want to hold onto that distinction. The people in our lives don't always understand the difference but it's real.", identity: "PSEUDONYM", hoursAfterPost: 3 },
+  { postIndex: 64, authorPseudonym: "DesertRose", body: "He's not entirely wrong, which is the part I hate. I've been sitting with this sentence all morning. The complexity of being changed by something and having to mourn what you were, while also understanding why someone else might mourn it too.", identity: "PSEUDONYM", hoursAfterPost: 7 },
+  { postIndex: 64, authorPseudonym: "TidalGrace", body: "Like I was more valuable when I was easier. That framing is the one that needs to go in the conversation. Not accusingly — but it needs to be said. The easier version was partly performance. He was enjoying a performance without knowing it was one.", identity: "PSEUDONYM", hoursAfterPost: 14 },
+  { postIndex: 64, authorPseudonym: "SteadyRain", body: "I didn't speak to my husband for two days after something similar. He thought I was punishing him. I was actually just trying to find words that didn't start a war. We eventually figured out a signal — I say 'I need to think before I can talk about this' and he waits. It helps.", identity: "PSEUDONYM", hoursAfterPost: 28 },
+
+  // ── Post 65: "Learning to be honest about my body" (relationships) ─────
+  { postIndex: 65, authorPseudonym: "WinterBloom", body: "Over dinner, somewhat unexpectedly, in a stumbling not-at-all-graceful way. This is exactly how the real conversations go. Not planned. Not graceful. Just necessary.", identity: "PSEUDONYM", hoursAfterPost: 2 },
+  { postIndex: 65, authorPseudonym: "CopperMoon", body: "I'm still in the 'let myself understand it first' stage. I'm not ready to say it out loud. Reading this makes me think the saying-out-loud part might actually be possible eventually.", identity: "PSEUDONYM", hoursAfterPost: 6 },
+  { postIndex: 65, authorPseudonym: "NightOwl3am", body: "Twenty-two years in and still learning how to be honest. That's both a little sad and entirely okay — I keep rereading this line. This is the marriage I want to have. Not the frictionless one. The honest one.", identity: "PSEUDONYM", hoursAfterPost: 15 },
+  { postIndex: 65, authorPseudonym: "SilverLining", body: "He said 'I'm glad you told me.' That's a good man. That's the response that makes the telling worth it.", identity: "PSEUDONYM", hoursAfterPost: 24 },
+
+  // ── Post 66: "This body carried me" (body-changes) ───────────────────
+  { postIndex: 66, authorPseudonym: "NightOwl3am", body: "The inventory at the mirror that turned into something else. I've done that inventory so many times. I've never had it turn into gratitude before. I'm going to try that.", identity: "PSEUDONYM", hoursAfterPost: 2 },
+  { postIndex: 66, authorPseudonym: "WinterBloom", body: "It did its job and I was too busy criticizing it to notice. That's going to sit with me for a while. Thank you.", identity: "PSEUDONYM", hoursAfterPost: 7 },
+  { postIndex: 66, authorPseudonym: "GoldenThread", body: "It sat with your mother while she was dying. That detail made me stop. This body showed up for every hard thing. It earned something better than what I usually give it.", identity: "PSEUDONYM", hoursAfterPost: 13 },
+  { postIndex: 66, authorPseudonym: "QuietStorm42", body: "Not an argument that the body looks good, by the standards I was raised on. Honest. Not pretending the standards don't exist. Just questioning what they were actually measuring. That's different from body positivity slogans and I appreciate it.", identity: "PSEUDONYM", hoursAfterPost: 22 },
+
+  // ── Post 67: "First pair of jeans in three years" (body-changes) ──────
+  { postIndex: 67, authorPseudonym: "DesertRose", body: "It doesn't sound like nothing. It sounds exactly like what it is. A small act of accepting yourself as you are now, not as you were. That's not small at all.", identity: "PSEUDONYM", hoursAfterPost: 2 },
+  { postIndex: 67, authorPseudonym: "MoonlitSage", body: "The size that fits. Not the size you used to wear. This is so deceptively simple and so genuinely hard. I'm proud of you.", identity: "PSEUDONYM", hoursAfterPost: 5 },
+  { postIndex: 67, authorPseudonym: "WildSage", body: "I wore a swimsuit at the beach last summer for the first time in four years. Nobody noticed. Nobody cared. My daughter held my hand. That's the version of this story I hold onto.", identity: "PSEUDONYM", hoursAfterPost: 12 },
+  { postIndex: 67, authorPseudonym: "SteadyRain", body: "My daughter said 'are those new?' and I said yes — such a normal exchange for such a not-normal moment. I love this story.", identity: "PSEUDONYM", hoursAfterPost: 20 },
 ];
 
 // ============================================================================
