@@ -258,7 +258,7 @@ function OneToOneSection() {
         {/* CTAs */}
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
           <a
-            href="https://www.adriantubero.com"
+            href="https://dradriantubero.com/about.html"
             target="_blank"
             rel="noopener noreferrer"
             style={{
