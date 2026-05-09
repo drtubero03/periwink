@@ -126,26 +126,18 @@ function VerificationScreen({ email }: { email: string }) {
   return (
     <>
       <ButterflyVideoOverlay active={showOverlay} onDismiss={() => setShowOverlay(false)} />
+
+      {/* Sprig sits directly below the layout wordmark, above the card */}
+      <div style={{ textAlign: "center", marginBottom: 20, marginTop: -26 }}>
+        <BotanicalSprig size={64} />
+      </div>
+
       <div style={{
         background: "var(--color-card, #FDFBF8)",
         border: "1px solid var(--color-border-warm, #DDD7CE)",
         borderRadius: 20, padding: "40px 32px",
         textAlign: "center",
       }}>
-        {/* Wordmark */}
-        <p style={{
-          fontFamily: "var(--font-heading, 'Cormorant Garamond', serif)",
-          fontSize: 22, fontWeight: 300, color: "var(--color-dusty-plum, #6E5A7E)",
-          letterSpacing: "0.04em", marginBottom: 28,
-        }}>
-          periwink
-        </p>
-
-        {/* Botanical icon */}
-        <div style={{ marginBottom: 24 }}>
-          <BotanicalSprig size={72} />
-        </div>
-
         {/* Heading */}
         <h1 style={{
           fontFamily: "var(--font-heading, 'Cormorant Garamond', serif)",
