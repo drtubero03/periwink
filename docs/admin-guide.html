@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Periwink Admin Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --plum: #6E5A7E;
+      --plum-light: #8B7A9B;
+      --lavender: #B7A8C9;
+      --ivory: #F7F3EE;
+      --card: #FDFBF8;
+      --border: #E2DDE8;
+      --border-light: #EDE9F0;
+      --ink: #2B2433;
+      --text2: #6B6575;
+      --text3: #9B94A3;
+      --periwinkle: #8C92FF;
+      --glow: #D7CCFF;
+    }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--ivory);
+      color: var(--ink);
+      font-weight: 300;
+      line-height: 1.7;
+      padding: 0;
+    }
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 28px 48px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--plum);
+      letter-spacing: 0.02em;
+    }
+    .logo span { color: var(--text3); font-weight: 300; font-size: 1rem; margin-left: 8px; }
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 56px 32px 80px;
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 1rem;
+      color: var(--text2);
+      margin-bottom: 48px;
+    }
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+    .toc h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text2);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.85rem;
+    }
+    .toc ol {
+      padding-left: 20px;
+    }
+    .toc li {
+      margin-bottom: 6px;
+    }
+    .toc a {
+      color: var(--plum);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .toc a:hover { text-decoration: underline; }
+    section {
+      margin-bottom: 52px;
+    }
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .section-num {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--lavender);
+      margin-bottom: 4px;
+    }
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--lavender);
+      margin: 10px 0 20px;
+    }
+    p { font-size: 0.95rem; color: var(--text2); margin-bottom: 14px; }
+    ul, ol { padding-left: 22px; margin-bottom: 14px; }
+    li { font-size: 0.95rem; color: var(--text2); margin-bottom: 6px; }
+    strong { font-weight: 500; color: var(--ink); }
+    .callout {
+      background: var(--card);
+      border: 1px solid var(--border-light);
+      border-left: 3px solid var(--plum);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+    .callout.warn {
+      border-left-color: #C62828;
+    }
+    .callout p { margin: 0; }
+    .tab-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 20px 0;
+    }
+    @media (max-width: 600px) { .tab-grid { grid-template-columns: 1fr; } }
+    .tab-card {
+      background: var(--card);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .tab-card h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .tab-card p {
+      font-size: 0.83rem;
+      color: var(--text3);
+      margin: 0;
+    }
+    code {
+      background: rgba(110,90,126,0.08);
+      color: var(--plum);
+      font-family: monospace;
+      font-size: 0.85rem;
+      padding: 2px 8px;
+      border-radius: 5px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-right: 6px;
+    }
+    .badge-amber { background: #FFF8E1; color: #F57F17; }
+    .badge-green { background: #E8F5E9; color: #2E7D32; }
+    .badge-red { background: #FFEBEE; color: #C62828; }
+    .badge-blue { background: #E3F2FD; color: #1565C0; }
+    footer {
+      text-align: center;
+      padding: 32px;
+      font-size: 0.8rem;
+      color: var(--text3);
+      border-top: 1px solid var(--border-light);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Periwink <span>Admin Guide</span></div>
+</header>
+
+<main>
+  <h1>Admin Console Guide</h1>
+  <p class="subtitle">Everything you need to manage your Periwink community.</p>
+
+  <div class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#access">Accessing the Admin Console</a></li>
+      <li><a href="#dashboard">Dashboard Overview</a></li>
+      <li><a href="#activity">Community Activity</a></li>
+      <li><a href="#flags">Moderation Flags</a></li>
+      <li><a href="#signups">Signups</a></li>
+      <li><a href="#applications">Founding Member Applications</a></li>
+      <li><a href="#users">Users</a></li>
+      <li><a href="#posts">Posts</a></li>
+      <li><a href="#rooms">Rooms</a></li>
+      <li><a href="#moderators">Moderators</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. Access -->
+  <section id="access">
+    <div class="section-num">01</div>
+    <h2>Accessing the Admin Console</h2>
+    <div class="divider"></div>
+    <p>Go to <strong><a href="https://periwink-rjmcuborrq-ue.a.run.app/admin" style="color:var(--plum)">periwink-rjmcuborrq-ue.a.run.app/admin</a></strong> in your browser.</p>
+    <p>You will be immediately prompted for a password. Enter your admin password and press OK. The password is stored in your browser tab for the session — if you close the tab and return, you'll be asked again.</p>
+    <div class="callout warn">
+      <p><strong>Keep your password private.</strong> Anyone with it has full control over the community — user data, posts, applications, and moderation.</p>
+    </div>
+    <p>If you enter the wrong password, you'll see an "Access denied" message. Simply navigate back to <code>/admin</code> and try again.</p>
+  </section>
+
+  <!-- 2. Dashboard -->
+  <section id="dashboard">
+    <div class="section-num">02</div>
+    <h2>Dashboard</h2>
+    <div class="divider"></div>
+    <p>The <strong>Dashboard</strong> is the first thing you see after logging in. It gives you a quick health check of the community at a glance:</p>
+    <ul>
+      <li><strong>Community Signups</strong> — people who joined your waitlist</li>
+      <li><strong>Applications</strong> — founding member applications received</li>
+      <li><strong>Pending Review</strong> — applications you haven't acted on yet (highlighted in amber when there are some)</li>
+      <li><strong>Users</strong> — accounts fully created on the platform</li>
+      <li><strong>Posts / Comments / Reactions</strong> — community engagement metrics</li>
+      <li><strong>Symptom Logs</strong> — how many times members have used the tracker</li>
+      <li><strong>Flags Pending</strong> — content flagged by the AI that needs your review (highlighted in red when urgent)</li>
+    </ul>
+    <p>Below the stats you'll see a <strong>signup trend chart</strong> (last 30 days) and two panels showing your most <strong>recent signups</strong> and <strong>recent users</strong>.</p>
+    <p>Use the <strong>Refresh</strong> button (top right of the tab bar) any time to reload the latest data.</p>
+  </section>
+
+  <!-- 3. Activity -->
+  <section id="activity">
+    <div class="section-num">03</div>
+    <h2>Community Activity</h2>
+    <div class="divider"></div>
+    <p>The <strong>Activity</strong> tab shows a live feed of all posts and comments across every room, in reverse chronological order.</p>
+    <p>Each card shows:</p>
+    <ul>
+      <li>Whether it's a <strong>Post</strong> or a <strong>Reply</strong></li>
+      <li>The room it was posted in</li>
+      <li>The author's display name (or "Anonymous" for anonymous posts)</li>
+      <li>A preview of the content</li>
+      <li>How long ago it was posted</li>
+    </ul>
+    <p>Posts or comments marked <span class="badge badge-red">Hidden</span> will appear faded — they are hidden from regular members but still visible to you here.</p>
+    <p>AI-generated content (from the AI Guide bot, if enabled) is marked with a purple <strong>AI Guide</strong> badge and a slightly different background.</p>
+  </section>
+
+  <!-- 4. Flags -->
+  <section id="flags">
+    <div class="section-num">04</div>
+    <h2>Moderation Flags</h2>
+    <div class="divider"></div>
+    <p>The <strong>Flags</strong> tab is your moderation queue. When the AI detects content that may violate community guidelines, it creates a flag for your review.</p>
+    <p>Flags have three severity levels:</p>
+    <ul>
+      <li><span class="badge badge-red">HIGH</span> Potentially harmful — review promptly</li>
+      <li><span class="badge badge-amber">MEDIUM</span> Borderline content — use your judgement</li>
+      <li><span class="badge badge-blue">LOW</span> Minor concern — informational</li>
+    </ul>
+    <p>For each flag you'll see the content, the AI's reason for flagging it, and two action buttons:</p>
+    <ul>
+      <li><strong>Mark Reviewed</strong> — you've seen it and taken action (e.g., the post is already hidden)</li>
+      <li><strong>Dismiss</strong> — the flag was a false positive, no action needed</li>
+    </ul>
+    <div class="callout">
+      <p>To hide a flagged post, go to the <strong>Posts</strong> tab, find the post, and click <strong>Hide</strong>. Then come back to Flags and mark it Reviewed.</p>
+    </div>
+    <p>The tab defaults to showing only <span class="badge badge-amber">PENDING</span> flags. Use the filter buttons to view Reviewed or Dismissed flags too.</p>
+  </section>
+
+  <!-- 5. Signups -->
+  <section id="signups">
+    <div class="section-num">05</div>
+    <h2>Signups</h2>
+    <div class="divider"></div>
+    <p>The <strong>Signups</strong> tab lists everyone who submitted their email through your landing page waitlist form. These people are interested in joining but have not yet created an account.</p>
+    <p>Each entry shows their name, email address, chosen pseudonym, and the date they signed up. You can click any email address to open a draft email to them directly.</p>
+    <p>Use the <strong>search bar</strong> to filter by name, email, or pseudonym.</p>
+  </section>
+
+  <!-- 6. Applications -->
+  <section id="applications">
+    <div class="section-num">06</div>
+    <h2>Founding Member Applications</h2>
+    <div class="divider"></div>
+    <p>The <strong>Applications</strong> tab manages people who applied to be founding members. This is a more curated group than general signups.</p>
+    <p>Each application shows the person's name, email, the role type they applied for, and the current status:</p>
+    <ul>
+      <li><span class="badge badge-amber">PENDING</span> New, not yet reviewed</li>
+      <li><span class="badge badge-blue">REVIEWING</span> You're actively considering this person</li>
+      <li><span class="badge badge-green">APPROVED</span> Accepted as a founding member</li>
+      <li><span class="badge badge-red">DECLINED</span> Not accepted</li>
+    </ul>
+    <p><strong>To view full application details</strong>, click anywhere on a row — it expands to show what drew them to Periwink, what they offer, their organization, and website.</p>
+    <p><strong>To update status</strong>, use the dropdown at the end of the row. Changes save immediately.</p>
+    <p>Use the filter buttons at the top to see only Pending, Reviewing, Approved, or Declined applications.</p>
+  </section>
+
+  <!-- 7. Users -->
+  <section id="users">
+    <div class="section-num">07</div>
+    <h2>Users</h2>
+    <div class="divider"></div>
+    <p>The <strong>Users</strong> tab lists everyone who has created a full account on Periwink. Unlike signups, these people can log in and participate in the community.</p>
+    <p>Each row shows their display name, email, menopause stage (if they shared it during onboarding), and when they joined.</p>
+    <p>Use the <strong>search bar</strong> to find someone by email or display name. You can click their email to draft a message to them.</p>
+  </section>
+
+  <!-- 8. Posts -->
+  <section id="posts">
+    <div class="section-num">08</div>
+    <h2>Posts</h2>
+    <div class="divider"></div>
+    <p>The <strong>Posts</strong> tab gives you full moderation control over community content.</p>
+    <p>For each post you can:</p>
+    <ul>
+      <li><strong>Pin / Unpin</strong> — pinned posts appear at the top of the room</li>
+      <li><strong>Hide / Show</strong> — hides a post from regular members without deleting it</li>
+      <li><strong>Lock / Unlock</strong> — prevents new comments on a post</li>
+      <li><strong>Delete</strong> — soft-deletes the post (it's not shown but remains in the database)</li>
+    </ul>
+    <div class="callout warn">
+      <p><strong>Deletion is permanent from the user's perspective.</strong> The post disappears from the community immediately. Use Hide first if you're unsure.</p>
+    </div>
+    <p>Use the <strong>search bar</strong> to find posts by title, content, author name, or room name. Anonymous posts show "Anonymous" as the author.</p>
+  </section>
+
+  <!-- 9. Rooms -->
+  <section id="rooms">
+    <div class="section-num">09</div>
+    <h2>Rooms</h2>
+    <div class="divider"></div>
+    <p>The <strong>Rooms</strong> tab shows all the discussion rooms on the platform — their name, emoji icon, how many posts and followers each has, whether they're a default room (shown to all new members), and their display order.</p>
+    <p>At the bottom of the tab, you can <strong>create a new room</strong> by filling in:</p>
+    <ul>
+      <li><strong>Room name</strong> — e.g., "Hot Flashes"</li>
+      <li><strong>Slug</strong> — the URL-friendly version, e.g., <code>hot-flashes</code> (no spaces, lowercase)</li>
+      <li><strong>Description</strong> — one sentence about what the room is for</li>
+      <li><strong>Icon</strong> — an emoji, e.g., 🔥</li>
+      <li><strong>Sort order</strong> — lower numbers appear first in the list</li>
+      <li><strong>Default room</strong> — check this if new members should automatically follow this room</li>
+    </ul>
+  </section>
+
+  <!-- 10. Moderators -->
+  <section id="moderators">
+    <div class="section-num">10</div>
+    <h2>Moderators</h2>
+    <div class="divider"></div>
+    <p>The <strong>Moderators</strong> tab lets you assign trusted community members as moderators of specific rooms.</p>
+    <p>Moderators have two roles:</p>
+    <ul>
+      <li><strong>Moderator</strong> — can help manage content in their assigned room</li>
+      <li><strong>Owner</strong> — full ownership of the room</li>
+    </ul>
+    <p>To add a moderator, select a user from the dropdown, choose their room, set their role, and click <strong>Add</strong>. To remove one, click the <strong>Remove</strong> button next to their row.</p>
+    <div class="callout">
+      <p>Only users who have already created accounts will appear in the user dropdown. If someone isn't showing up, they may not have signed up yet.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Periwink &mdash; Admin Guide &mdash; For internal use only
+</footer>
+
+</body>
+</html>
