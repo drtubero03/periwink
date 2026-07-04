@@ -329,6 +329,39 @@ export async function sendPasswordReset({
   }
 }
 
+export async function sendAdminNewAccountAlert({
+  email,
+  displayName,
+  userId,
+}: {
+  email: string;
+  displayName?: string | null;
+  userId: string;
+}) {
+  try {
+    await getResend().emails.send({
+      from: FROM_EMAIL,
+      to: "adrian@yourperiwink.com",
+      subject: "New account created — " + (displayName || email),
+      html: `
+        <div style="font-family: -apple-system, sans-serif; max-width: 480px; margin: 0 auto; padding: 32px;">
+          <h2 style="color: #6E5A7E; font-size: 20px; margin-bottom: 16px;">New Account Created</h2>
+          ${displayName ? `<p><strong>Name:</strong> ${displayName}</p>` : ""}
+          <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+          <p><strong>User ID:</strong> ${userId}</p>
+          <p style="color: #9B94A3; font-size: 13px; margin-top: 16px;">
+            ${new Date().toLocaleString("en-US", { timeZone: "America/New_York" })} ET
+          </p>
+        </div>
+      `,
+    });
+    return { success: true };
+  } catch (error) {
+    console.error("Failed to send admin new account alert:", error);
+    return { success: false, error };
+  }
+}
+
 export async function sendModerationAlert({
   postId,
   postTitle,

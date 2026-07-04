@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import bcrypt from "bcryptjs";
 import { randomBytes } from "crypto";
-import { sendVerificationEmail } from "@/lib/email";
+import { sendVerificationEmail, sendAdminNewAccountAlert } from "@/lib/email";
 
 export async function POST(req: Request) {
   try {
@@ -65,6 +65,12 @@ export async function POST(req: Request) {
     });
 
     await sendVerificationEmail({ to: email, token });
+
+    try {
+      await sendAdminNewAccountAlert({ email, displayName, userId: user.id });
+    } catch (emailErr) {
+      console.error("Failed to send admin new account alert:", emailErr);
+    }
 
     return NextResponse.json({ success: true, userId: user.id, requiresVerification: true });
   } catch (error) {

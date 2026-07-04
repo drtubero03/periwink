@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import { ButterflyVideoOverlay } from "./ButterflyOverlay";
 
 // — Design Tokens —
 const c = {
@@ -22,57 +23,6 @@ const c = {
 };
 
 // — SVG Illustrations —
-function BotanicalIllustration({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Main stem */}
-      <path d="M250 380 Q248 300 252 220 Q254 160 250 100" stroke={c.periwinkleLight} strokeWidth="2" fill="none" opacity="0.6" />
-      {/* Left branch */}
-      <path d="M250 280 Q200 260 160 220" stroke={c.periwinkleLight} strokeWidth="1.5" fill="none" opacity="0.5" />
-      <path d="M160 220 Q140 200 150 170 Q165 185 170 210 Q175 195 160 220Z" fill={c.periwinkleMist} opacity="0.7" />
-      {/* Right branch */}
-      <path d="M252 240 Q300 220 340 190" stroke={c.periwinkleLight} strokeWidth="1.5" fill="none" opacity="0.5" />
-      <path d="M340 190 Q360 170 350 140 Q335 160 330 180 Q325 165 340 190Z" fill={c.periwinkleMist} opacity="0.6" />
-      {/* Flower top */}
-      <ellipse cx="250" cy="90" rx="30" ry="25" fill={c.periwinkleLight} opacity="0.3" />
-      <ellipse cx="240" cy="80" rx="20" ry="18" fill={c.periwinkleSoft} opacity="0.25" />
-      <ellipse cx="260" cy="85" rx="22" ry="20" fill={c.periwinkleMist} opacity="0.35" />
-      <circle cx="250" cy="88" r="8" fill={c.periwinkle} opacity="0.2" />
-      {/* Small leaves */}
-      <path d="M250 320 Q230 310 220 290" stroke={c.periwinkleLight} strokeWidth="1" fill="none" opacity="0.4" />
-      <path d="M220 290 Q210 275 218 262 Q225 272 228 285 Q230 274 220 290Z" fill={c.periwinkleMist} opacity="0.5" />
-      <path d="M252 340 Q275 330 290 312" stroke={c.periwinkleLight} strokeWidth="1" fill="none" opacity="0.4" />
-      <path d="M290 312 Q305 298 298 282 Q288 295 285 308 Q280 296 290 312Z" fill={c.periwinkleMist} opacity="0.5" />
-      {/* Decorative dots */}
-      <circle cx="180" cy="170" r="3" fill={c.roseSoft} opacity="0.4" />
-      <circle cx="320" cy="150" r="2.5" fill={c.roseSoft} opacity="0.3" />
-      <circle cx="200" cy="120" r="2" fill={c.periwinkleSoft} opacity="0.35" />
-      <circle cx="300" cy="110" r="2" fill={c.periwinkleSoft} opacity="0.3" />
-    </svg>
-  );
-}
-
-function WavesIllustration({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 200 Q80 160 160 200 Q240 240 320 200 Q400 160 500 200" stroke={c.periwinkleLight} strokeWidth="2" fill="none" opacity="0.5" />
-      <path d="M0 230 Q80 190 160 230 Q240 270 320 230 Q400 190 500 230" stroke={c.periwinkleMist} strokeWidth="1.5" fill="none" opacity="0.4" />
-      <path d="M0 260 Q80 220 160 260 Q240 300 320 260 Q400 220 500 260" stroke={c.periwinkleLight} strokeWidth="1" fill="none" opacity="0.3" />
-      {/* Abstract organic shapes */}
-      <circle cx="100" cy="150" r="40" fill={c.periwinkleMist} opacity="0.2" />
-      <circle cx="380" cy="130" r="55" fill={c.periwinkleMist} opacity="0.15" />
-      <circle cx="250" cy="280" r="35" fill={c.roseSoft} opacity="0.12" />
-      <ellipse cx="200" cy="100" rx="25" ry="18" fill={c.periwinkleLight} opacity="0.15" />
-      <ellipse cx="350" cy="300" rx="30" ry="20" fill={c.periwinkleSoft} opacity="0.1" />
-      {/* Small floating elements */}
-      <circle cx="80" cy="100" r="3" fill={c.periwinkle} opacity="0.25" />
-      <circle cx="420" cy="90" r="2.5" fill={c.periwinkle} opacity="0.2" />
-      <circle cx="300" cy="340" r="3" fill={c.roseSoft} opacity="0.3" />
-      <circle cx="150" cy="320" r="2" fill={c.periwinkleSoft} opacity="0.25" />
-    </svg>
-  );
-}
-
 function HeroIllustration({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -337,6 +287,7 @@ export default function LandingPage() {
   }>({ open: false, title: "", message: "" });
   const [isScrolled, setIsScrolled] = useState(false);
   const [formError, setFormError] = useState("");
+  const [showJoinButterfly, setShowJoinButterfly] = useState(false);
 
   const openJoin = useCallback(() => setJoinChoiceOpen(true), []);
 
@@ -373,6 +324,7 @@ export default function LandingPage() {
     e.preventDefault();
     setFormError("");
     setIsSubmitting(true);
+    setShowJoinButterfly(true);
     try {
       const res = await fetch("/api/signup/community", {
         method: "POST",
@@ -463,6 +415,7 @@ export default function LandingPage() {
 
   return (
     <>
+      <ButterflyVideoOverlay active={showJoinButterfly} onDismiss={() => setShowJoinButterfly(false)} />
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap');
 
@@ -569,9 +522,22 @@ export default function LandingPage() {
           background: `linear-gradient(180deg, ${c.lavenderBlush} 0%, ${c.cream} 100%)`,
         }}
       >
-        {/* Background illustration */}
+        {/* Background video */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <video
+            autoPlay muted loop playsInline
+            className="w-full h-full object-cover"
+            style={{ opacity: 0.55 }}
+          >
+            <source src="/hero-video.mp4" type="video/mp4" />
+          </video>
+          <div
+            className="absolute inset-0"
+            style={{ background: `linear-gradient(180deg, ${c.lavenderBlush}99 0%, ${c.cream}CC 75%, ${c.cream} 100%)` }}
+          />
+        </div>
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none hero-illustration">
-          <HeroIllustration className="w-full max-w-2xl h-auto opacity-60" />
+          <HeroIllustration className="w-full max-w-2xl h-auto opacity-30" />
         </div>
 
         <div className="max-w-3xl relative z-10">
@@ -645,13 +611,11 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <Reveal>
               <div
-                className="aspect-[4/3] rounded-3xl flex items-center justify-center overflow-hidden"
+                className="aspect-[4/3] rounded-3xl overflow-hidden"
                 style={{
-                  background: `linear-gradient(135deg, ${c.periwinkleMist}, ${c.lavenderBlush})`,
+                  background: `linear-gradient(135deg, ${c.periwinkleMist}, ${c.lavenderBlush}) center/cover, url('/hero-botanical.png') center/cover no-repeat`,
                 }}
-              >
-                <BotanicalIllustration className="w-4/5 h-auto" />
-              </div>
+              />
             </Reveal>
 
             <Reveal delay={0.15}>
@@ -886,13 +850,11 @@ export default function LandingPage() {
 
             <Reveal delay={0.15}>
               <div
-                className="aspect-[4/3] rounded-3xl flex items-center justify-center overflow-hidden"
+                className="aspect-[4/3] rounded-3xl overflow-hidden"
                 style={{
-                  background: `linear-gradient(135deg, ${c.periwinkleMist}, ${c.lavenderBlush})`,
+                  background: `linear-gradient(135deg, ${c.periwinkleMist}, ${c.lavenderBlush}) center/cover, url('/bg-floral.png') center/cover no-repeat`,
                 }}
-              >
-                <WavesIllustration className="w-4/5 h-auto" />
-              </div>
+              />
             </Reveal>
           </div>
         </div>
@@ -1069,7 +1031,6 @@ export default function LandingPage() {
           <FormInput
             label="Email"
             required
-            type="email"
             placeholder="you@example.com"
             value={communityForm.email}
             onChange={(e) => setCommunityForm({ ...communityForm, email: e.target.value })}
