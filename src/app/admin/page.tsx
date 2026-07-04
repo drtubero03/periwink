@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -190,7 +190,12 @@ function timeAgo(iso: string) {
 // Component
 // ---------------------------------------------------------------------------
 
-type Tab = "dashboard" | "activity" | "flags" | "signups" | "applications" | "users" | "posts" | "rooms" | "moderators";
+type Tab = "dashboard" | "activity" | "flags" | "signups" | "applications" | "users" | "posts" | "rooms" | "moderators" | "expert";
+
+interface ChatMessage {
+  role: "user" | "assistant";
+  content: string;
+}
 
 export default function AdminPage() {
   const [authed, setAuthed] = useState(false);
@@ -226,6 +231,14 @@ export default function AdminPage() {
 
   // Admin token for API auth
   const [adminToken, setAdminToken] = useState("");
+
+  // Expert chat
+  const [chatMessages, setChatMessages] = useState<ChatMessage[]>([
+    { role: "assistant", content: "Hi Adrian! I'm your Periwink admin expert. Ask me anything about your community — signups, posts, moderation, activity — or tell me to take care of something for you." },
+  ]);
+  const [chatInput, setChatInput] = useState("");
+  const [chatLoading, setChatLoading] = useState(false);
+  const chatEndRef = useRef<HTMLDivElement>(null);
 
   // Auth
   useEffect(() => {
@@ -392,6 +405,7 @@ export default function AdminPage() {
   // Tab config
   const pendingFlags = flags.filter(f => f.status === "PENDING").length;
   const tabs: { key: Tab; label: string; count?: number; alert?: boolean }[] = [
+    { key: "expert", label: "✦ Expert" },
     { key: "dashboard", label: "Dashboard" },
     { key: "activity", label: "Activity", count: activity.length || undefined },
     { key: "flags", label: "Flags", count: pendingFlags || undefined, alert: pendingFlags > 0 },
@@ -1105,6 +1119,141 @@ export default function AdminPage() {
     );
   }
 
+  // -----------------------------------------------------------------------
+  // Expert chat
+  // -----------------------------------------------------------------------
+
+  async function sendChatMessage() {
+    if (!chatInput.trim() || chatLoading) return;
+    const userMessage = chatInput.trim();
+    setChatInput("");
+    const newMessages: ChatMessage[] = [...chatMessages, { role: "user", content: userMessage }];
+    setChatMessages(newMessages);
+    setChatLoading(true);
+    try {
+      const res = await adminFetch("/api/admin/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: newMessages }),
+      });
+      const data = await res.json();
+      setChatMessages([...newMessages, { role: "assistant", content: data.message || "Something went wrong. Please try again." }]);
+    } catch {
+      setChatMessages([...newMessages, { role: "assistant", content: "I ran into an error. Please try again." }]);
+    } finally {
+      setChatLoading(false);
+      setTimeout(() => chatEndRef.current?.scrollIntoView({ behavior: "smooth" }), 50);
+    }
+  }
+
+  function renderExpert() {
+    return (
+      <div style={{ display: "flex", flexDirection: "column", height: "calc(100vh - 220px)", minHeight: 480 }}>
+        {/* Header */}
+        <div style={{ marginBottom: 16 }}>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.4rem", fontWeight: 400, color: C.ink, margin: 0 }}>
+            Admin Expert
+          </h2>
+          <p style={{ fontSize: "0.82rem", color: C.text3, margin: "4px 0 0", fontFamily: "'DM Sans', sans-serif" }}>
+            Ask anything about your community, or have me take action — hide a post, approve an application, create a room, and more.
+          </p>
+        </div>
+
+        {/* Message list */}
+        <div style={{ flex: 1, overflowY: "auto", display: "flex", flexDirection: "column", gap: 14, paddingRight: 4, paddingBottom: 8 }}>
+          {chatMessages.map((msg, i) => (
+            <div key={i} style={{ display: "flex", justifyContent: msg.role === "user" ? "flex-end" : "flex-start" }}>
+              {msg.role === "assistant" && (
+                <div style={{ width: 28, height: 28, borderRadius: "50%", background: "linear-gradient(135deg, #8C92FF, #B7A8C9)", flexShrink: 0, marginRight: 10, marginTop: 2 }} />
+              )}
+              <div style={{
+                maxWidth: "72%",
+                background: msg.role === "user" ? C.plum : C.card,
+                color: msg.role === "user" ? "#fff" : C.ink,
+                border: msg.role === "user" ? "none" : `1px solid ${C.borderLight}`,
+                borderRadius: msg.role === "user" ? "16px 16px 4px 16px" : "16px 16px 16px 4px",
+                padding: "12px 16px",
+                fontSize: "0.88rem",
+                lineHeight: 1.65,
+                fontFamily: "'DM Sans', sans-serif",
+                whiteSpace: "pre-wrap",
+                wordBreak: "break-word",
+              }}>
+                {msg.content}
+              </div>
+            </div>
+          ))}
+          {chatLoading && (
+            <div style={{ display: "flex", justifyContent: "flex-start", alignItems: "flex-start" }}>
+              <div style={{ width: 28, height: 28, borderRadius: "50%", background: "linear-gradient(135deg, #8C92FF, #B7A8C9)", flexShrink: 0, marginRight: 10, marginTop: 2 }} />
+              <div style={{ background: C.card, border: `1px solid ${C.borderLight}`, borderRadius: "16px 16px 16px 4px", padding: "12px 16px", fontSize: "0.88rem", color: C.text3, fontFamily: "'DM Sans', sans-serif" }}>
+                Thinking…
+              </div>
+            </div>
+          )}
+          <div ref={chatEndRef} />
+        </div>
+
+        {/* Suggested prompts (only shown at start) */}
+        {chatMessages.length === 1 && (
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 12 }}>
+            {[
+              "How many signups do we have?",
+              "Show me pending applications",
+              "Any moderation flags to review?",
+              "What's our most active room?",
+            ].map(prompt => (
+              <button key={prompt} onClick={() => { setChatInput(prompt); }} style={{
+                padding: "7px 14px", borderRadius: 999, border: `1px solid ${C.border}`,
+                background: "transparent", color: C.plum, cursor: "pointer",
+                fontFamily: "'DM Sans', sans-serif", fontSize: "0.8rem", fontWeight: 500,
+              }}>
+                {prompt}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* Input */}
+        <div style={{ display: "flex", gap: 10, paddingTop: 14, borderTop: `1px solid ${C.borderLight}` }}>
+          <input
+            type="text"
+            value={chatInput}
+            onChange={e => setChatInput(e.target.value)}
+            onKeyDown={e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendChatMessage(); } }}
+            placeholder="Ask me anything about your community…"
+            disabled={chatLoading}
+            style={{
+              flex: 1,
+              padding: "12px 16px",
+              borderRadius: 12,
+              border: `1px solid ${C.border}`,
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: "0.9rem",
+              color: C.ink,
+              background: chatLoading ? "#f9f9f9" : "#fff",
+              outline: "none",
+            }}
+          />
+          <button onClick={sendChatMessage} disabled={chatLoading || !chatInput.trim()} style={{
+            padding: "12px 22px",
+            borderRadius: 12,
+            border: "none",
+            cursor: chatLoading || !chatInput.trim() ? "not-allowed" : "pointer",
+            background: chatLoading || !chatInput.trim() ? C.borderLight : C.plum,
+            color: chatLoading || !chatInput.trim() ? C.text3 : "#fff",
+            fontFamily: "'DM Sans', sans-serif",
+            fontSize: "0.88rem",
+            fontWeight: 500,
+            transition: "all 0.15s",
+          }}>
+            Send
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   // Shared input style
   const inputS: React.CSSProperties = {
     padding: "8px 12px",
@@ -1174,6 +1323,7 @@ export default function AdminPage() {
         </button>
       </div>
 
+      {tab === "expert" && renderExpert()}
       {tab === "dashboard" && renderDashboard()}
       {tab === "activity" && renderActivity()}
       {tab === "flags" && renderFlags()}

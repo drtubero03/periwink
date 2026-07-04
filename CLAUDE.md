@@ -7,7 +7,7 @@
 **Live URLs:**
 - Landing page: https://www.yourperiwink.com (GitHub Pages from `docs/`)
 - App (Cloud Run): _pending GCP deployment_
-- Repo: https://github.com/zelidav/periwink
+- Repo: https://github.com/drtubero03/periwink
 
 ---
 
